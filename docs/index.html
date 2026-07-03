@@ -132,32 +132,25 @@
               <p>
                 Fastener removal from complex geometries, such as inclined, recessed, and curved surfaces,
                 remains challenging and often suffers from low success rates due to the difficulty of
-                accurately estimating the six-degree-of-freedom (6-DoF) fastener pose, including the
-                fastener center position and axial orientation relative to the mounting surface. In
-                addition, successful fastener removal requires precise identification of the fastener
-                type, size, and rotational alignment angle. These requirements make autonomous fastener
-                removal a challenging task. Most existing studies rely on computer-aided design (CAD)
-                models to obtain this information and guide robotic fastener removal. However, accurate
-                CAD models of the target assembly are not always available in practice. To address these
-                challenges, this paper proposes a novel vision-guided robotic fastener removal methodology
-                that integrates 3D sensing, fastener pose estimation, surface-normal estimation, and
-                vision-guided robotic control. The proposed methodology consists of an offline phase and
-                an online phase. In the offline phase, deep learning-based point cloud analytics are
-                developed to extract the fastener center position and axial-normal direction from
-                structured light 3D scans. A deep learning-based segmentation network is trained to
-                segment fasteners from the point cloud, and the segmented screws fastener points are then
-                fed into a classification network to identify the fastener type and size. The 6-DoF pose
-                of each fastener is obtained by matching the segmented point cloud with the CAD model of
-                the corresponding fastener, which is often available from online repositories. In the
-                online phase, an eye-in-hand RGB-D camera is used to transform the estimated 6-DoF
-                fastener pose into the robot coordinate frame, enabling the robot to perform bit
-                insertion and fastener removal. Extensive experiments rigorously quantify the sensing
-                errors in fastener center-position estimation and normal-direction estimation. Final
+                accurately estimating the fastener six-degree-of-freedom (6-DoF) pose, type, size, and
+                rotational alignment angle. Most existing studies rely on computer-aided design (CAD)
+                models to obtain this information and guide robotic fastener removal. However, CAD models
+                of the target assembly are not always available in practice. To address these challenges,
+                this paper proposes a novel vision-guided robotic fastener removal methodology that
+                integrates 3D sensing, fastener pose estimation, surface-normal estimation, and
+                vision-guided robotic control across offline and online phases. In the offline phase,
+                deep learning-based point cloud analytics are developed to extract the fastener center
+                position and axial-normal direction from structured light 3D scans. A deep learning-based
+                segmentation network is trained to segment fasteners from the point cloud, and a
+                classification network identifies the fastener type and size. The fastener 6-DoF pose is
+                obtained by matching the segmented point cloud with the CAD model of the corresponding
+                fastener, which is often available online. In the online phase, an eye-in-hand RGB-D
+                camera transforms the estimated 6-DoF fastener pose into the robot coordinate frame,
+                for precise bit insertion and fastener removal. Extensive experiments rigorously
+                quantified sensing errors in center-position and normal-direction estimations. Final
                 fastener removal tests on more than 800 fasteners of different types, including hex-head,
                 Phillips, and hex-socket fasteners, and sizes achieved a 91% success rate, outperforming
-                state-of-the-art (SOTA) methods. Different with other SOTA works that only focus on
-                fastener removal from horizontal surface, this investigation reached high success rate on
-                inclined, recessed, or curved surfaces.
+                state-of-the-art methods [1,2], which are limited to horizontal surfaces.
               </p>
             </div>
           </div>
